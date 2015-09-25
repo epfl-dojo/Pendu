@@ -126,7 +126,7 @@ string donneMot(){
         // process pair (a,b)
     }
     int taille = mots.size();
-
-
+    //cout << taille << endl;
+    //TODO random value entre 0 et taille
     return "coucou";
 }
