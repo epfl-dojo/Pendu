@@ -5,14 +5,29 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 void dessinePendu(int);
+int jouer();
 string donneMot();
+int main (){
+    std::srand(std::time(0));
 
-int main()
+    while (true) {
+        jouer();
 
+        char partieAgain;
+        cout << "Nouvelle partie ?";
+        cin >> partieAgain;
+        if (partieAgain != 'o') {
+            return 0;
+        }
+    }
+}
+
+int jouer()
 {
     set<char> lettresSaisies;
     string motRecherche = donneMot();
@@ -117,17 +132,16 @@ void dessinePendu(int nbVies) {
 }
 
 string donneMot(){
+
     std::string line;
     ifstream dict;
     vector<string> mots;
     dict.open("dict.txt");
     while (std::getline(dict, line))
     {
-        // TODO: virer les mots vide :)
-        mots.push_back(line);
-        // process pair (a,b)
+        if(line != ""){
+            mots.push_back(line);
+        }
     }
-    int taille = mots.size();
-    int index = rand() % taille;
-    return mots[index];
+    return mots[rand() % mots.size()];
 }
