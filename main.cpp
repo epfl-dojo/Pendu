@@ -4,6 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -122,11 +123,11 @@ string donneMot(){
     dict.open("dict.txt");
     while (std::getline(dict, line))
     {
+        // TODO: virer les mots vide :)
         mots.push_back(line);
         // process pair (a,b)
     }
     int taille = mots.size();
-    //cout << taille << endl;
-    //TODO random value entre 0 et taille
-    return "coucou";
+    int index = rand() % taille;
+    return mots[index];
 }

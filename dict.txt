@@ -2,13 +2,15 @@ maison
 voiture
 tribunal
 fromage
+
 vache
 lait
 explosion
-anticonstitutionellement
+anticonstitutionnellement
 ordinateur
 dojo
 lion
+
 aigle
 superman
 enfant
